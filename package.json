@@ -1,0 +1,21 @@
+{
+  "name": "generator-min-tsc",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "files": ["generators"],
+  "keywords": [
+    "yeoman-generator"
+  ],
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "yeoman-generator": "^5.6.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.8.0",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.25.4"
+  }
+}
