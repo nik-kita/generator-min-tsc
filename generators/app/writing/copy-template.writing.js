@@ -21,10 +21,7 @@ module.exports = {
       dot: true, nodir: true, cwd: root,
     });
 
-    generator.log(files);
-
     for (let i = 0; i < files.length; ++i) {
-      generator.log(files[i]);
       generator
         .fs
         .copyTpl(
