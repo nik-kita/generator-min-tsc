@@ -1,1 +1,1 @@
-![1643769304045.png](image/README/1643769304045.png)
+Minimal typescript project generator.

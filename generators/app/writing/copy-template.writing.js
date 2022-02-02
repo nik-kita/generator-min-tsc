@@ -27,7 +27,9 @@ module.exports = {
         .copyTpl(
           generator.templatePath(files[i]),
           generator.destinationPath(files[i]),
-          generator.answers,
+          {
+            appName,
+          },
         );
     }
   },
