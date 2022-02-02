@@ -1,18 +1,20 @@
 const Generator = require('yeoman-generator');
+const { copyTemplate } = require('./writing/copy-template.writing');
+const { loopAskProjectName } = require('./prompting/loop-ask-project-name.prompting');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
-    this.argument('appName', { type: String, required: true });
+    this.argument('appName', { required: false });
   }
 
   initializing() {
 
   }
 
-  prompting() {
-
+  async prompting() {
+    await loopAskProjectName(this);
   }
 
   configuring() {
@@ -24,7 +26,7 @@ module.exports = class extends Generator {
   }
 
   writing() {
-
+    copyTemplate(this);
   }
 
   conflicts() {

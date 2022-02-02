@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "files": ["generators"],
+  "files": [
+    "generators"
+  ],
   "keywords": [
     "yeoman-generator"
   ],
@@ -11,6 +13,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "glob": "^7.2.0",
     "yeoman-generator": "^5.6.1"
   },
   "devDependencies": {

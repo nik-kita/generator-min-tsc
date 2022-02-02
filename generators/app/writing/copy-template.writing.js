@@ -1,0 +1,37 @@
+/* eslint-disable no-restricted-syntax */
+/* eslint-disable guard-for-in */
+// eslint-disable-next-line no-unused-vars
+const Generator = require('yeoman-generator');
+const glob = require('glob');
+
+module.exports = {
+  /**
+   *
+   * @param {Generator} generator
+   */
+  copyTemplate(generator) {
+    const { appName } = generator.options;
+    const root = generator.templatePath();
+
+    generator.destinationRoot(`${
+      generator.destinationPath(appName)
+    }`);
+
+    const files = glob.sync('**', {
+      dot: true, nodir: true, cwd: root,
+    });
+
+    generator.log(files);
+
+    for (let i = 0; i < files.length; ++i) {
+      generator.log(files[i]);
+      generator
+        .fs
+        .copyTpl(
+          generator.templatePath(files[i]),
+          generator.destinationPath(files[i]),
+          generator.answers,
+        );
+    }
+  },
+};
