@@ -1,0 +1,1 @@
+Minimal typescript project generator.
