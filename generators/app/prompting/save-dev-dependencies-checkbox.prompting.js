@@ -2,18 +2,19 @@
 const Generator = require('yeoman-generator');
 
 const SAVE_DEV_DEPENDENCIES = [
-  '@types/node',
-  'typescript',
-  'ts-node',
-  'ts-node-dev',
-  'jest',
-  '@jest/types',
-  '@types/jest',
-  'eslint',
-  'eslint-config-airbnb-base',
-  'eslint-plugin-import',
-  '@typescript-eslint/eslint-plugin',
-  '@typescript-eslint/parser',
+  { dependency: '@types/node' },
+  { dependency: 'typescript' },
+  { dependency: 'ts-node' },
+  { dependency: 'ts-node-dev' },
+  { dependency: 'jest' },
+  { dependency: '@jest/types' },
+  { dependency: '@types/jest' },
+  { dependency: 'eslint' },
+  { dependency: 'eslint-config-airbnb-base' },
+  { dependency: 'eslint-plugin-import' },
+  { dependency: '@typescript-eslint/eslint-plugin' },
+  { dependency: '@typescript-eslint/parser' },
+  { dependency: '@types/dotenv' },
 ];
 
 /**
@@ -28,10 +29,11 @@ module.exports = async (generator) => {
       message: 'Npm will install --save-dev dependencies:',
       pageSize: 100,
       loop: false,
-      choices: SAVE_DEV_DEPENDENCIES.map((dependency) => ({
+      choices: SAVE_DEV_DEPENDENCIES.map(({ dependency, disabled, checked }) => ({
         name: dependency,
         value: dependency,
-        checked: true,
+        checked: checked === undefined ? true : checked,
+        disabled: disabled === undefined ? false : disabled,
       })),
     },
   ]);
