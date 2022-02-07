@@ -13,13 +13,10 @@ module.exports = async (generator) => {
       name: 'confirmAskOpenProjectInVs',
       message: 'Do you want to open project in vs-code now?',
       default: true,
-      pageSize: 100,
     },
   ]);
 
   if (confirmAskOpenProjectInVs) {
-    return execTerminalCommand(`code ${generator.destinationPath()}`);
+    await execTerminalCommand(`code ${generator.destinationPath()}`);
   }
-
-  return Promise.resolve();
 };

@@ -13,6 +13,8 @@ const {
 } = require('./install/index.install');
 const {
   askOpenProjectInVs,
+  gitInitAddCommit,
+  npxHuskyInstall,
 } = require('./end/index.end');
 
 module.exports = class extends Generator {
@@ -54,6 +56,8 @@ module.exports = class extends Generator {
   }
 
   async end() {
+    await gitInitAddCommit(this);
     await askOpenProjectInVs(this);
+    await npxHuskyInstall(this);
   }
 };
