@@ -1,7 +1,21 @@
 const Generator = require('yeoman-generator');
-const { copyTemplate } = require('./writing/copy-template.writing');
-const { loopAskProjectName, saveDevDependenciesCheckbox } = require('./prompting/index.prompting');
-const { saveDevDependenciesInstall } = require('./install/index.install');
+const {
+  copyTemplate,
+} = require('./writing/copy-template.writing');
+const {
+  loopAskProjectName,
+  saveDevDependenciesCheckbox,
+  dependenciesCheckbox,
+} = require('./prompting/index.prompting');
+const {
+  saveDevDependenciesInstall,
+  dependendiesInstall,
+} = require('./install/index.install');
+const {
+  askOpenProjectInVs,
+  gitInitAddCommit,
+  npxHuskyInstall,
+} = require('./end/index.end');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
@@ -16,6 +30,7 @@ module.exports = class extends Generator {
 
   async prompting() {
     await loopAskProjectName(this);
+    await dependenciesCheckbox(this);
     await saveDevDependenciesCheckbox(this);
   }
 
@@ -27,8 +42,8 @@ module.exports = class extends Generator {
 
   }
 
-  writing() {
-    copyTemplate(this);
+  async writing() {
+    await copyTemplate(this);
   }
 
   conflicts() {
@@ -36,10 +51,13 @@ module.exports = class extends Generator {
   }
 
   async install() {
+    await dependendiesInstall(this);
     await saveDevDependenciesInstall(this);
   }
 
-  end() {
-
+  async end() {
+    await gitInitAddCommit(this);
+    await askOpenProjectInVs(this);
+    await npxHuskyInstall(this);
   }
 };
