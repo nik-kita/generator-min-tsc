@@ -27,6 +27,7 @@ module.exports = async (generator) => {
       type: 'input',
       name: 'githubAccount',
       message: 'Your github account name:',
+      default: 'TODO-replace-with-your-github-account-name',
     },
   ]);
 

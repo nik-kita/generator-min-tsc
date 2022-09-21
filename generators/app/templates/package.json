@@ -22,7 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/<%=githubAccount%>/<%=appName%>"
   },
-  "author": "https://github.com/<%=githubAccount%> <%=gitEmail$>",
+  "author": "https://github.com/<%=githubAccount%> <%=gitEmail%>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/<%=githubAccount%>/<%=appName%>/issues"

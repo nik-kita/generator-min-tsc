@@ -6,9 +6,6 @@ module.exports = (command) => new Promise((resolve, reject) => {
       reject(error);
     }
 
-    if (stderr) console.error(stderr);
-    if (stdout) console.info(stderr);
-
-    resolve(stdout);
+    resolve(stdout ?? stderr);
   });
 });

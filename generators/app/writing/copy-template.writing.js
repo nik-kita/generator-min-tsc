@@ -10,7 +10,7 @@ module.exports = {
    * @param {Generator} generator
    */
   copyTemplate(generator) {
-    const { appName } = generator.options;
+    const { appName, gitEmail, githubAccount } = generator.options;
     const root = generator.templatePath();
 
     generator.destinationRoot(`${
@@ -29,6 +29,8 @@ module.exports = {
           generator.destinationPath(files[i]),
           {
             appName,
+            gitEmail,
+            githubAccount,
           },
         );
     }

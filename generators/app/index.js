@@ -22,9 +22,9 @@ module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
-    this.argument('appName', { required: true });
-    this.argument('gitEmail', { default: 'TODO-your-git-email' });
-    this.argument('githubAccount', { default: 'TODO-your-github-account-name' });
+    this.argument('appName', { required: false });
+    this.argument('gitEmail', { required: false });
+    this.argument('githubAccount', { required: false });
   }
 
   initializing() {

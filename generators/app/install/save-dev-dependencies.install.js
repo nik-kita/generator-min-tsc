@@ -8,7 +8,7 @@ const Generator = require('yeoman-generator');
 module.exports = async (generator) => {
   const { saveDevDependencies } = generator.options;
 
-  return generator.spawnCommand('npm', [
+  return saveDevDependencies.length && generator.spawnCommand('npm', [
     'install',
     '--save-dev',
     ...saveDevDependencies,
