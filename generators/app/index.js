@@ -16,12 +16,15 @@ const {
   gitInitAddCommit,
   npxHuskyInstall,
 } = require('./end/index.end');
+const { getGitEmail } = require('./git-github/index.git-configuration');
 
 module.exports = class extends Generator {
   constructor(args, opts) {
     super(args, opts);
 
-    this.argument('appName', { required: false });
+    this.argument('appName', { required: true });
+    this.argument('gitEmail', { default: 'TODO-your-git-email' });
+    this.argument('githubAccount', { default: 'TODO-your-github-account-name' });
   }
 
   initializing() {
@@ -30,6 +33,7 @@ module.exports = class extends Generator {
 
   async prompting() {
     await loopAskProjectName(this);
+    await getGitEmail(this);
     await dependenciesCheckbox(this);
     await saveDevDependenciesCheckbox(this);
   }

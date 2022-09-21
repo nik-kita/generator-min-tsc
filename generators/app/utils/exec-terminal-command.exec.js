@@ -9,6 +9,6 @@ module.exports = (command) => new Promise((resolve, reject) => {
     if (stderr) console.error(stderr);
     if (stdout) console.info(stderr);
 
-    resolve();
+    resolve(stdout);
   });
 });
