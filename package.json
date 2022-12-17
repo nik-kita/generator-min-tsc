@@ -10,26 +10,10 @@
     "yeoman-generator"
   ],
   "scripts": {},
-  "author": "",
+  "author": "nik-kita",
   "license": "ISC",
   "dependencies": {
-    "glob": "^7.2.0",
-    "yeoman-generator": "^5.6.1"
-  },
-  "devDependencies": {
-    "eslint": "^8.8.0",
-    "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.25.4",
-    "husky": "^7.0.4"
-  },
-  "husky": {
-    "hooks": {
-      "pre-push": "npm test"
-    }
-  },
-  "config": {
-    "commitizen": {
-      "path": "cz-conventional-changelog"
-    }
+    "glob": "^8.0.3",
+    "yeoman-generator": "^5.7.0"
   }
 }
