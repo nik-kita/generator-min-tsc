@@ -10,12 +10,18 @@ module.exports = {
    * @param {Generator} generator
    */
   copyTemplate(generator) {
-    const { appName, gitEmail, githubAccount } = generator.options;
+    const {
+      appName,
+      gitEmail,
+      githubAccount,
+      dependencies,
+      saveDevDependencies,
+    } = generator.options;
+
     const root = generator.templatePath();
 
-    generator.destinationRoot(`${
-      generator.destinationPath(appName)
-    }`);
+    generator.destinationRoot(`${generator.destinationPath(appName)
+      }`);
 
     const files = glob.sync('**', {
       dot: true, nodir: true, cwd: root,

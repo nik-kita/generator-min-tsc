@@ -4,8 +4,6 @@ const Generator = require('yeoman-generator');
 const SAVE_DEV_DEPENDENCIES = [
   { dependency: '@types/node' },
   { dependency: 'typescript' },
-  { dependency: 'ts-node' },
-  { dependency: 'ts-node-dev' },
   { dependency: 'jest' },
   { dependency: 'ts-jest' },
   { dependency: '@jest/types' },
@@ -28,7 +26,7 @@ module.exports = async (generator) => {
     {
       type: 'checkbox',
       name: 'checkboxSaveDev',
-      message: 'Npm will install --save-dev dependencies:',
+      message: 'pnpm (or npm) will install --save-dev dependencies:',
       pageSize: 100,
       loop: false,
       choices: SAVE_DEV_DEPENDENCIES.map(({ dependency, disabled, checked }) => ({
