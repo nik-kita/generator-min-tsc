@@ -1,8 +1,6 @@
-/* eslint-disable no-restricted-syntax */
-/* eslint-disable guard-for-in */
-// eslint-disable-next-line no-unused-vars
 const Generator = require('yeoman-generator');
 const glob = require('glob');
+const { join } = require('path');
 
 module.exports = {
   /**
@@ -18,7 +16,9 @@ module.exports = {
       saveDevDependencies,
     } = generator.options;
 
-    const root = generator.templatePath();
+    const prefix = 'full';
+
+    const root = generator.templatePath(prefix);
 
     generator.destinationRoot(`${generator.destinationPath(appName)
       }`);
@@ -31,7 +31,7 @@ module.exports = {
       generator
         .fs
         .copyTpl(
-          generator.templatePath(files[i]),
+          generator.templatePath(prefix, files[i]),
           generator.destinationPath(files[i]),
           {
             appName,
