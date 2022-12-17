@@ -17,7 +17,7 @@ module.exports = async (generator) => {
     {
       type: 'checkbox',
       name: 'checkboxDependencies',
-      message: 'pnpm (or npm) will install such dependencies:',
+      message: 'pnpm will install such dependencies:',
       pageSize: 100,
       loop: false,
       choices: DEPENDENCIES.map(({ dependency, disabled, checked }) => ({

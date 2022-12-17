@@ -25,7 +25,7 @@ module.exports = async (generator) => {
     {
       type: 'checkbox',
       name: 'checkboxSaveDev',
-      message: 'pnpm (or npm) will install --save-dev dependencies:',
+      message: 'pnpm will install --save-dev dependencies:',
       pageSize: 100,
       loop: false,
       choices: SAVE_DEV_DEPENDENCIES.map(({ dependency, disabled, checked }) => ({

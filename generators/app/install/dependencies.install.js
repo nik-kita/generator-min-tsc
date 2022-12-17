@@ -12,9 +12,15 @@ module.exports = async (generator) => {
     'add',
     ...dependencies,
   ]).catch((error) => {
-    return dependencies.length && generator.spawnCommand('npm', [
+    return generator.spawnCommand('npm', [
       'install',
-      ...dependencies,
-    ])
+      '-g',
+      'pnpm',
+    ]).then(() => {
+      return generator.spawnCommand('pnpm', [
+        'add',
+        ...dependencies,
+      ]);
+    });
   });
 };

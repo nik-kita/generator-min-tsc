@@ -13,10 +13,16 @@ module.exports = async (generator) => {
     '-D',
     ...saveDevDependencies,
   ]).catch((error) => {
-    return saveDevDependencies.length && generator.spawnCommand('npm', [
+    return generator.spawnCommand('npm', [
       'install',
-      '--save-dev',
-      ...saveDevDependencies,
-    ]);
+      '-g',
+      'pnpm',
+    ]).then(() => {
+      return generator.spawnCommand('pnpm', [
+        'add',
+        '-D',
+        ...dependencies,
+      ]);
+    });
   });
 };
