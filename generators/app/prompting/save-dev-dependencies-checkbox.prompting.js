@@ -2,6 +2,7 @@
 const Generator = require('yeoman-generator');
 
 const SAVE_DEV_DEPENDENCIES = [
+  { dependency: 'husky', checked: false },
   { dependency: '@types/node' },
   { dependency: 'typescript' },
   { dependency: 'jest' },
@@ -13,7 +14,6 @@ const SAVE_DEV_DEPENDENCIES = [
   { dependency: 'eslint-plugin-import' },
   { dependency: '@typescript-eslint/eslint-plugin' },
   { dependency: '@typescript-eslint/parser' },
-  { dependency: 'husky' },
 ];
 
 /**

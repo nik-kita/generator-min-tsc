@@ -15,8 +15,10 @@ module.exports = {
       dependencies,
       saveDevDependencies,
     } = generator.options;
+  
+    const husky = saveDevDependencies.includes('husky');
 
-    const prefix = 'full';
+    const prefix = husky ? 'full' : 'no-husky';
 
     const root = generator.templatePath(prefix);
 

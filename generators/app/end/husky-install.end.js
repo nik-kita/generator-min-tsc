@@ -7,6 +7,10 @@ const { execTerminalCommand } = require('../utils/index.utils');
  * @param {Generator} generator
  */
 module.exports = async (generator) => {
+  if (!generator.options.saveDevDependencies.includes('husky')) {
+    return;
+  }
+
   execTerminalCommand(`\
     cd ${generator.destinationPath()} \
     && npx husky install \
