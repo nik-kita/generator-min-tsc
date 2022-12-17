@@ -17,6 +17,6 @@ module.exports = async (generator) => {
   ]);
 
   return confirmAskOpenProjectInVs
-    ? execTerminalCommand(`code ${generator.destinationPath()}`)
+    ? execTerminalCommand(`code -r ${generator.destinationPath()}`)
     : () => {};
 };
