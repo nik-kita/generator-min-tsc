@@ -13,7 +13,6 @@ const SAVE_DEV_DEPENDENCIES = [
   { dependency: 'eslint-plugin-import' },
   { dependency: '@typescript-eslint/eslint-plugin' },
   { dependency: '@typescript-eslint/parser' },
-  { dependency: '@types/dotenv' },
   { dependency: 'husky' },
 ];
 
