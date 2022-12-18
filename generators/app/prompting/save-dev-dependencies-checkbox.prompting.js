@@ -7,6 +7,7 @@ const SAVE_DEV_DEPENDENCIES = [
   { dependency: 'typescript' },
   { dependency: 'jest' },
   { dependency: 'ts-jest' },
+  { dependency: 'ts-node' },
   { dependency: '@jest/types' },
   { dependency: '@types/jest' },
   { dependency: 'eslint' },
