@@ -4,7 +4,6 @@ import { join } from 'path';
 import { parse } from 'comment-json';
 
 const data = readFileSync(join(__dirname, 'tsconfig.json'), { encoding: 'utf-8' });
-console.log(parse(data));
 const { compilerOptions } = parse(data) as unknown as {
   compilerOptions: {
     baseUrl: string,
@@ -13,7 +12,6 @@ const { compilerOptions } = parse(data) as unknown as {
 };
 const { baseUrl, paths } = compilerOptions;
 
-console.log(baseUrl, paths);
 
 export default async (): Promise<Config.InitialOptions> => {
 
