@@ -2,8 +2,8 @@
   "name": "<%=appName%>",
   "version": "1.0.0",
   "description": "",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "dist/src/index.js",
+  "types": "dist/src/index.d.ts",
   "files": [
     "dist/**/*"
   ],
@@ -12,7 +12,7 @@
     "version": "git add -A src",
     "postversion": "git push",
     "build": "npx tsc -p tsconfig.json",
-    "start": "node dist/index.js",
+    "start": "node dist/src/index.js",
     "test": "echo 'husky' will run 'test' script on every push. If you have tests - update 'test' script",
     "lint": "npx eslint --fix 'src/**/*.ts' './jest.config.ts'",
     "prepare": "npm run build && husky install"
