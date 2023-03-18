@@ -9,7 +9,6 @@ const SAVE_DEV_DEPENDENCIES = [
   { dependency: 'ts-jest' },
   { dependency: 'ts-node' },
   { dependency: '@jest/types' },
-  { dependency: '@jest/types' },
   { dependency: 'comment-json' },
   { dependency: 'eslint' },
   { dependency: 'eslint-config-airbnb-base' },

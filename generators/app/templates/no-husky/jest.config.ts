@@ -22,8 +22,8 @@ export default async (): Promise<Config.InitialOptions> => {
     detectLeaks: true,
     preset: 'ts-jest',
     rootDir: baseUrl,
-    globalSetup: '<rootDir>/src/__test__/jest.global-setup.ts',
-    setupFiles: ['<rootDir>/src/__test__/jest.env.setup-file.ts'],
+    globalSetup: '<rootDir>/src/__test__/__setup__/jest.global-setup.ts',
+    setupFiles: ['<rootDir>/src/__test__/__setup__/jest.env.setup-file.ts'],
     testRegex: '.+\\.(test|spec|e2e)\\.ts$',
     moduleNameMapper: Object.entries(paths).reduce((acc, [alias, p]) => {
       (acc as any)[alias] = Array.isArray(p)
